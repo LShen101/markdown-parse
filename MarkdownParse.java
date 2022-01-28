@@ -20,6 +20,10 @@ public class MarkdownParse {
             openParen == -1 || closeParen == -1){
                 return toReturn;
             }
+            if(nextCloseBracket == openParen - 1){
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                //return toReturn;
+            }
             currentIndex = closeParen + 1;
         }
         return toReturn;
